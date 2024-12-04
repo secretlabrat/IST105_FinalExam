@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courier Management System</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Sever #No.</h1>
+      <h1>Welcome to JSville Courier Management System!</h1>
+    </header>
+    <hr />
+    <div class="content">
+      <form onsubmit="addPackage(event)" novalidate>
+        <h2>Enter package details below:</h2>
+        <div class="add-package-area">
+          <input
+            id="recepient-name"
+            placeholder="Recipient Name"
+            required
+            pattern="^[A-Za-z]+$"
+          />
+          <input
+            id="package-id"
+            placeholder="Package ID"
+            required
+            pattern="^[0-9]+$"
+          />
+          <input
+            id="delivery-address"
+            placeholder="Delivery Address"
+            required
+          />
+          <input
+            id="weight"
+            placeholder="Weight"
+            type="number"
+            min="1"
+            step="1"
+            pattern="^[0-9]+$"
+            required
+          />
+          <input type="submit" id="add-package" value="Add Package" />
+        </div>
+      </form>
+      <h3 id="result-text"></h3>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Recipient Name</th>
+              <th>Package ID</th>
+              <th>Delivery Address</th>
+              <th>Weight (kg)</th>
+              <th>Tracking Code</th>
+            </tr>
+          </thead>
+          <tbody id="packages-list-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
